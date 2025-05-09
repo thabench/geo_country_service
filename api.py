@@ -11,6 +11,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "world_countries.geojson")
 
 
+@app.get("/")
+def read_root():
+    return {"GeoCountry service": "Please provide coordinates"}
+
+
 @app.get("/getCountryCode")
 def get_country_code(latitude: float, longitude: float) -> JSONResponse:
     coord_string = f"latitude: {latitude}, longitude: {longitude}"
