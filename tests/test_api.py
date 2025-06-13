@@ -1,4 +1,4 @@
-import handler
+from geo_country_service import handler
 
 
 def test_ok_result():

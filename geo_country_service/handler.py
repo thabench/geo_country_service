@@ -19,7 +19,7 @@ def get_country_code(latitude: float, longitude: float) -> dict[str, str | None]
         countries = orjson.loads(f.read())
 
     mapped_country_shapes = (
-        {idx: {"shape": shape(feature["geometry"]), "countryCode": feature["properties"].get("iso_a3")}
+        {idx: {"shape": shape(feature["geometry"]), "countryCode": feature["properties"].get("adm0_a3_us")}
          for idx, feature
          in enumerate(countries["features"])}
     )
@@ -30,7 +30,7 @@ def get_country_code(latitude: float, longitude: float) -> dict[str, str | None]
             alpha3_code = value.get("countryCode")
             break
 
-    if not alpha3_code:
+    if not alpha3_code or not alpha3_code.isalpha():
         result["message"] = f"Country code not found for coordinates: {coord_string}"
         return result
 
