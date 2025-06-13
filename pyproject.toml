@@ -1,6 +1,6 @@
 [project]
 name = "geo-country-service"
-version = "0.1.0"
+version = "0.2.0"
 description = "A service that provides an alpha-3 country code from given coordinates"
 authors = [
     {name = "Benas Jasikonis",email = "benasjasikonis@carvertical.com"}
