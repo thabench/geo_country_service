@@ -5,21 +5,23 @@ A service to get alpha3 country code from provided coordinate point
 
 # Usage
 
-Do a request to **/getCountryCode** with payload:
+Pass latitude and longitude coordinates to **get_country_code** function:
 ```
-{"latitude": 45.123 (float), "longitude": -25.123 (float)}
+{"latitude": (float), "longitude": (float)}
 ```
-Response ```body``` contains ```message``` and ```result```. 
-If coordinate payload is valid Alpha 3 country will be stored in ```result```.
+Result contains ```message``` and ```result```. 
+If coordinate payload is valid Alpha-3 country will be stored in ```result```.
 ---
 *Example:*
 
-Request
-```
-api/getCountryCode?latitude=54.769350220741586&longitude=25.319456079720805
-```
+```python
+from geo_country_service import get_country_code
 
-Response
+
+result = get_country_code(latitude=45.123, longitude=-25.123)
+print(result)
 ```
-Response.body = b'{"message":"OK","result":"LTU"}'
+*Result*
+```
+{"message":"success","result":"LTU"}
 ```
