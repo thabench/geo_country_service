@@ -1,0 +1,19 @@
+[project]
+name = "geo-country-service"
+version = "0.1.0"
+description = "A service that provides an alpha-3 country code from given coordinates"
+authors = [
+    {name = "Benas Jasikonis",email = "benasjasikonis@carvertical.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "shapely==2.1.0",
+    "orjson==3.10",
+    "pytest==8.4.0"
+]
+
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
